@@ -1,12 +1,9 @@
 import Image from 'next/image'
 
-export default function Tracks({ data, data2 }: { data: any[], data2: any[] }) {
-  data.tracks.hits.forEach((item) => console.log(item))
-  // data.tracks.hits.forEach((item) => item.track.hub.actions.forEach(song => console.log(song.uri)))
-  // data.tracks.hits.forEach(item => item.track.hub.actions.forEach(song => console.log(song.uri)))
+export default function Tracks({ hits1, hits2 }: { hits1: any, hits2: any }) {
   return (
     <div id="music-component" className="grid grid-cols-2 gap-8 bg-white/10 p-4 rounded-xl h-[80vh] overflow-y-scroll">
-      {data && data.tracks.hits.map((item, key) => {
+      {hits1 && hits1.map((item: any, key: number) => {
         return <div key={key} className="flex justify-between w-full p-2 rounded-lg bg-white/10">
           <Image width={60} height={50} className="rounded-lg" src={item.track.images.coverart} alt="" />
           <div className="flex flex-col items-end justify-between p-2">
@@ -19,7 +16,7 @@ export default function Tracks({ data, data2 }: { data: any[], data2: any[] }) {
           </div>
         </div>
       })}
-      {data2 && data2.tracks.hits.map((item, key) => {
+      {hits2 && hits2.map((item: any, key: number) => {
         return <div key={key} className="flex justify-between w-full p-2 rounded-lg bg-white/10">
           <Image width={60} height={50} className="rounded-lg" src={item.track.images.coverart} alt="" />
           <div className="flex flex-col items-end justify-between p-2">

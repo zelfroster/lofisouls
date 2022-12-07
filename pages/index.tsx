@@ -3,8 +3,7 @@ import Navbar from '../components/Navbar'
 import Tracks from '../components/Tracks'
 import Player from '../components/Player'
 
-export default function Home({ data, data2 }: { data: any[], data2: any[] }) {
-  // export default function Home({ data, songUrl }: { data: any[], songUrl: any[] }) {
+export default function Home({ data, data2 }: { data: any, data2: any }) {
   return (
     <div>
       <Head>
@@ -15,8 +14,8 @@ export default function Home({ data, data2 }: { data: any[], data2: any[] }) {
         <Navbar />
         <section id="music-component" className="container mx-auto h-max">
           <article className="flex items-center justify-center gap-16 w-full h-full px-8 text-purple-100">
-            <Tracks data={data} data2={data2} />
-            <Player data={data} data2={data2} />
+            <Tracks hits1={data.tracks.hits} hits2={data2.tracks.hits} />
+            <Player hits1={data.tracks.hits} hits2={data2.tracks.hits} />
           </article>
         </section>
       </main>
