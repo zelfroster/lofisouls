@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Tracks from '../components/Tracks'
-import Player from '../components/Player'
 
-export default function Home({ data, data2 }: { data: any, data2: any }) {
+export default function Home({ data }: { data: any }) {
   return (
     <div>
       <Head>
@@ -12,16 +11,14 @@ export default function Home({ data, data2 }: { data: any, data2: any }) {
       </Head>
       <main className="w-full font-raleway min-h-screen gradient__bg4">
         <Navbar />
-        <section id="music-component" className="container mx-auto h-max">
-          <article className="flex items-center justify-center gap-16 w-full h-full px-8 text-purple-100">
-            <Tracks hits1={data.tracks.hits} hits2={data2.tracks.hits} />
-            <Player hits1={data.tracks.hits} hits2={data2.tracks.hits} />
-          </article>
+        <section className="container mx-auto h-max">
+          <Tracks hits={data.tracks.hits} />
         </section>
       </main>
     </div>
   )
 }
+
 export async function getStaticProps() {
   const options = {
     method: 'GET',
@@ -31,14 +28,17 @@ export async function getStaticProps() {
     }
   };
 
-  const res = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=rock', options)
-  const data = await res.json()
-  const res2 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=melody', options)
+  const res1 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=rock', options)
+  const data1 = await res1.json()
+  const res2 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=lofi', options)
   const data2 = await res2.json()
-
-  // const songUrl = await data.tracks.hits.forEach((item) => item.track.hub.actions.forEach(song => song.uri))
+  const res3 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=pop', options)
+  const data3 = await res3.json()
+  let data = { ...data1 }
+  data2.tracks.hits.forEach((item: object) => data.tracks.hits.push(item))
+  data3.tracks.hits.forEach((item: object) => data.tracks.hits.push(item))
 
   return {
-    props: { data, data2 }
+    props: { data }
   }
 }
