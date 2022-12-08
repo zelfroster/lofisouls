@@ -9,7 +9,7 @@ export default function Home({ data }: { data: any }) {
         <title>LofiSouls</title>
         <meta name="description" content="A Project where people can listen to Music" />
       </Head>
-      <main className="w-full font-raleway min-h-screen gradient__bg4">
+      <main className="w-full font-raleway min-h-screen gradient__bg">
         <Navbar />
         <section className="container mx-auto h-max">
           <Tracks hits={data.tracks.hits} />

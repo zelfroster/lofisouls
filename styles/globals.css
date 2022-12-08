@@ -5,19 +5,6 @@
 @tailwind utilities;
 
 .gradient__bg {
-  background: hsla(252, 60%, 29%, 1);
-  background: linear-gradient(90deg, hsla(252, 60%, 29%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(252, 60%, 29%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(252, 60%, 29%, 1) 0%, hsla(277, 74%, 24%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2F1E86", endColorstr="#471069", GradientType=1 );
-}
-
-.gradient__bg3 {
-   /* background-image: linear-gradient(to right top, #5c22bb, #9300ad, #b9009d, #d5008b, #e90079, #ef0f7e, #f41a83, #fa2288, #f026a6, #dc37c5, #be4ce2, #8e5ffb); */
-   background-image: linear-gradient(to right top, #3d187a, #630d75, #80006e, #980065, #ab075a, #ad085d, #b00961, #b20a64, #a00777, #861989, #602899, #0c34a4);
-}
-
-.gradient__bg4 {
   background: hsla(200, 83%, 30%, 1);
   background: linear-gradient(90deg, hsla(274, 65%, 12%, 1) -20%, hsla(200, 83%, 30%, 1) 30%, hsla(274, 65%, 12%, 1) 120%);
   background: -moz-linear-gradient(90deg, hsla(274, 65%, 12%, 1) -20%, hsla(200, 83%, 30%, 1) 30%, hsla(274, 65%, 12%, 1) 120%);
@@ -25,10 +12,33 @@
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C11E38", endColorstr="#220B34", GradientType=1 );
 }
 
-.gradient__bg5 {
-  background: hsla(236, 100%, 8%, 1);
-  background: linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000328", endColorstr="#00458E", GradientType=1 );
+#music-component, #music-player {
+/* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+
+#music-component::-webkit-scrollbar, #music-player::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  display: none;
+}
+
+/* .gradient__bg1 { */
+/*   background: hsla(252, 60%, 29%, 1); */
+/*   background: linear-gradient(90deg, hsla(252, 60%, 29%, 1) 0%, hsla(277, 74%, 24%, 1) 100%); */
+/*   background: -moz-linear-gradient(90deg, hsla(252, 60%, 29%, 1) 0%, hsla(277, 74%, 24%, 1) 100%); */
+/*   background: -webkit-linear-gradient(90deg, hsla(252, 60%, 29%, 1) 0%, hsla(277, 74%, 24%, 1) 100%); */
+/*   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2F1E86", endColorstr="#471069", GradientType=1 ); */
+/* } */
+/**/
+/* .gradient__bg2 { */
+/*    background-image: linear-gradient(to right top, #3d187a, #630d75, #80006e, #980065, #ab075a, #ad085d, #b00961, #b20a64, #a00777, #861989, #602899, #0c34a4); */
+/* } */
+/**/
+/* .gradient__bg3 { */
+/*   background: hsla(236, 100%, 8%, 1); */
+/*   background: linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%); */
+/*   background: -moz-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%); */
+/*   background: -webkit-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%); */
+/*   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000328", endColorstr="#00458E", GradientType=1 ); */
+/* } */

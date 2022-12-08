@@ -10,9 +10,9 @@ export default function Tracks({ hits }: { hits: any }) {
       <div id="music-component" className="grid grid-cols-2 gap-8 bg-white/10 p-4 rounded-xl h-[80vh] overflow-y-scroll">
         {hits && hits.map((item: any, key: number) => {
           return <div key={key} className="flex justify-between w-full p-2 rounded-lg bg-white/10">
-            <div className="flex items-center justify-center gap-4">
+            <div className="relative flex items-center justify-center gap-4">
               <Image width={60} height={50} className="rounded-lg" src={item.track.images.coverart} alt="" />
-              <Image width={20} height={20} className="" src={playBtn} alt="play button" onClick={() => setActiveSong(item.track)} />
+              <Image width={20} height={20} className="absolute cursor-pointer" src={playBtn} alt="play button" onClick={() => setActiveSong(item.track)} />
             </div>
             <div className="flex flex-col items-end justify-between p-2">
               <h2 className="text-md text-purple-100">
