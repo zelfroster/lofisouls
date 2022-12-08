@@ -28,11 +28,11 @@ export async function getStaticProps() {
     }
   };
 
-  const res1 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=rock', options)
+  const res1 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=pop', options)
   const data1 = await res1.json()
   const res2 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=lofi', options)
   const data2 = await res2.json()
-  const res3 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=pop', options)
+  const res3 = await fetch('https://shazam-core.p.rapidapi.com/v1/search/multi?search_type=SONGS&query=rock', options)
   const data3 = await res3.json()
   let data = { ...data1 }
   data2.tracks.hits.forEach((item: object) => data.tracks.hits.push(item))
